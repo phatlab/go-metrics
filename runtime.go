@@ -133,9 +133,9 @@ func CaptureRuntimeMemStatsOnce(r Registry) {
 	runtimeMetrics.MemStats.Sys.Update(int64(memStats.Sys))
 	runtimeMetrics.MemStats.TotalAlloc.Update(int64(memStats.TotalAlloc))
 
-	currentNumCgoCalls := numCgoCall()
-	runtimeMetrics.NumCgoCall.Update(currentNumCgoCalls - numCgoCalls)
-	numCgoCalls = currentNumCgoCalls
+	// currentNumCgoCalls := numCgoCall()
+	// runtimeMetrics.NumCgoCall.Update(currentNumCgoCalls - numCgoCalls)
+	// numCgoCalls = currentNumCgoCalls
 
 	runtimeMetrics.NumGoroutine.Update(int64(runtime.NumGoroutine()))
 
